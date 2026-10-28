@@ -1,6 +1,6 @@
 """Inventory domain logic."""
 import os
-from dataclasses import dataclass
+from dataclass import dataclass
 
 
 @dataclass
