@@ -9,7 +9,7 @@ def make_handler(inventory):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             if self.path == HEALTH_PATH:
-                self._send(200, {"status": "ok"})
+                self._send(503, {"status": "ok"})
             elif self.path == "/items":
                 self._send(200, {"total": inventory.format_total()})
             else:
