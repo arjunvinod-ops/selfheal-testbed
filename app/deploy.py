@@ -14,6 +14,8 @@ def main():
     health_path = cfg["service"]["health_path"]
     server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
+server.socket.settimeout(5)
+server.handle_request()
     url = f"http://127.0.0.1:{port}{health_path}"
     try:
         with urllib.request.urlopen(url, timeout=0) as resp:
