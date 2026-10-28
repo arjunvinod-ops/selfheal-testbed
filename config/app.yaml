@@ -1,6 +1,6 @@
 service:
   name: inventory
-  port: 8085
+  port: eighty
   health_path: /health
 pricing:
   tax_rate: 0.23
