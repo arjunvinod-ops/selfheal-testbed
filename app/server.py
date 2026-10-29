@@ -2,7 +2,7 @@
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-HEALTH_PATH = "/health"
+HEALTH_PATH = "/status"
 
 
 def make_handler(inventory):
