@@ -35,7 +35,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         env:
-          http_proxy: http://127.0.0.1:9
+          http_proxy: ""
         run: python -m pytest -q tests
 
   deploy:
