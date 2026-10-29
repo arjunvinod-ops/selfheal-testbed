@@ -4,3 +4,6 @@ service:
   health_path: /health
   tax_rate: 0.23
   currency: EUR
+pricing:
+  tax_rate: 0.23
+  currency: EUR
