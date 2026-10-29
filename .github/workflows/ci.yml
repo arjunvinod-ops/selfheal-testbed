@@ -7,6 +7,7 @@ on:
 
 env:
   APP_CONFIG: config/app.yaml
+  no_proxy: '127.0.0.1'
 
 jobs:
   build:
