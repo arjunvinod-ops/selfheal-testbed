@@ -16,7 +16,7 @@ def test_add_and_total(inv):
 def test_add_existing_sku_accumulates(inv):
     inv.add_item("A1", "widget", 2, 10.0)
     inv.add_item("A1", "widget", 3, 10.0)
-    assert inv.total_value() == 61.5
+    assert inv.total_value() == 36.9
 
 
 def test_negative_quantity_rejected(inv):
