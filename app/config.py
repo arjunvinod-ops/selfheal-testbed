@@ -28,3 +28,6 @@ def load_config(path=None):
 if __name__ == "__main__":
     cfg = load_config()
     print(f"config OK: service={cfg['service']['name']} port={cfg['service']['port']}")
+if __name__ == "__main__":
+    cfg = load_config()
+    print(f"config OK: service={cfg['service']['name']} port={cfg['service']['port']}")

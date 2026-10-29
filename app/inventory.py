@@ -46,3 +46,4 @@ class Inventory:
 
     def format_total(self):
         return f"{self.total_value():.2f} {self.currency}"
+from app.config import load_config

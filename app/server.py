@@ -31,3 +31,4 @@ def make_handler(inventory):
 
 def create_server(inventory, host, port):
     return ThreadingHTTPServer((host, port), make_handler(inventory))
+from app.config import load_config
