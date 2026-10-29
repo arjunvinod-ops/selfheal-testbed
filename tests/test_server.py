@@ -4,7 +4,7 @@ import urllib.request
 
 import pytest
 
-from app.inventory import Inventory
+from inventory import Inventory
 from app.server import create_server
 
 
