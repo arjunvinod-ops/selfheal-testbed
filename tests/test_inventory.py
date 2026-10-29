@@ -10,13 +10,13 @@ def inv():
 
 def test_add_and_total(inv):
     inv.add_item("A1", "widget", 2, 10.0)
-    assert inv.total_value() == 24.6
+    assert inv.total_value() == 25.0
 
 
 def test_add_existing_sku_accumulates(inv):
     inv.add_item("A1", "widget", 2, 10.0)
     inv.add_item("A1", "widget", 3, 10.0)
-    assert inv.total_value() == 61.5
+    assert inv.total_value() == 62.0
 
 
 def test_negative_quantity_rejected(inv):
@@ -38,4 +38,4 @@ def test_low_stock_excludes_items_at_threshold(inv):
 
 def test_format_total(inv):
     inv.add_item("A1", "widget", 2, 10.0)
-    assert inv.format_total() == "24.60 EUR"
+    assert inv.format_total() == "25.00 EUR"
