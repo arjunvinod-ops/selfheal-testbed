@@ -12,7 +12,7 @@ def main():
     cfg = load_config()
     port = cfg["service"]["port"]
     health_path = cfg["service"]["health_path"]
-    server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
+    server = create_server(Inventory.from_config(cfg), "127.0.0.2", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{port}{health_path}"
     try:
