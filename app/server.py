@@ -11,7 +11,7 @@ def make_handler(inventory):
             if self.path == HEALTH_PATH:
                 self._send(200, {"status": "ok"})
             elif self.path == "/items":
-                self._send(200, {"total": inventory.format_total()})
+                self._send(200, {"total": inventory.total_value()})
             else:
                 self._send(404, {"error": "not found"})
 
