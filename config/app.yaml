@@ -1,7 +1,7 @@
 service:
   name: inventory
   port: 8085
-  health_path: /health
+  health_path: /healthz
 pricing:
   tax_rate: 0.23
   currency: EUR
