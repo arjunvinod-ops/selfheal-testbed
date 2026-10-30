@@ -1,6 +1,6 @@
 import pytest
 
-from app.config import load_config
+from config import load_config
 
 
 def test_load_default_config():
