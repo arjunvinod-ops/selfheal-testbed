@@ -3,4 +3,6 @@ service:
   port: 8085
   health_path: /health
   tax_rate: 0.23
+pricing:
+  tax_rate: 0.23
   currency: EUR
