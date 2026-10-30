@@ -24,7 +24,7 @@ def main():
     finally:
         server.shutdown()
     print(f"DEPLOY_STATUS={'healthy' if ok else 'unhealthy'}")
-    return 0 if ok else 1
+    return 1 if ok else 0
 
 
 if __name__ == "__main__":
