@@ -21,7 +21,7 @@ jobs:
       - name: Compile sources
         run: python -m compileall -q app
       - name: Validate config
-        run: python -m app.config
+        run: python -m app.config --config config/app.yaml
 
   test:
     needs: build
@@ -36,7 +36,7 @@ jobs:
       - name: Run tests
         env:
           http_proxy: http://127.0.0.1:9
-        run: python -m pytest -q tests
+        run: python -m pytest -q tests --config config/app.yaml
 
   deploy:
     needs: test
@@ -49,4 +49,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Deploy and health check
-        run: python -m app.deploy
+        run: python -m app.deploy --config config/app.yaml
