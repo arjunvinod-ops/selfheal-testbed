@@ -22,7 +22,7 @@ class Inventory:
         return cls(cfg["pricing"]["tax_rate"], cfg["pricing"]["currency"])
 
     def add_item(self, sku, name, quantity, unit_price):
-        if quantity < 0:
+        if quantity > 0:
             raise ValueError("quantity must be non-negative")
         if sku in self._items:
             self._items[sku].quantity += quantity
