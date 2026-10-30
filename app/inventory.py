@@ -37,7 +37,7 @@ class Inventory:
             raise ValueError("insufficient stock")
         item.quantity -= quantity
 
-    def total_value(self):
+    def total_value(self)
         subtotal = sum(i.quantity * i.unit_price for i in self._items.values())
         return round(subtotal * (1 + self.tax_rate), 2)
 
