@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
-        env:
-          http_proxy: http://127.0.0.1:9
+env:
+  no_proxy: localhost,127.0.0.1
         run: python -m pytest -q tests
 
   deploy:
