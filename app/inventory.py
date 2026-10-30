@@ -39,7 +39,7 @@ class Inventory:
 
     def total_value(self):
         subtotal = sum(i.quantity * i.unit_price for i in self._items.values())
-        return round(subtotal * (1 + self.tax_rate), 2)
+        return round(subtotal * (1 + self.tax_rate), 2) + ' EUR'
 
     def low_stock(self, threshold):
         return sorted(i.sku for i in self._items.values() if i.quantity < threshold)
