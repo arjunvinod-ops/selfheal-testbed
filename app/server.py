@@ -21,7 +21,7 @@ def make_handler(inventory):
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
-            self.wfile.write(body)
+            self.wfile.write(body.encode('utf-8'))
 
         def log_message(self, *args):
             pass
