@@ -20,9 +20,9 @@ def base_url():
 
 def test_health_responds_quickly(base_url):
     with urllib.request.urlopen(f"{base_url}/health", timeout=1) as resp:
-        assert json.load(resp) == {"status": "ok"}
+        assert json.load(resp.read()) == {"status": "ok"}
 
 
 def test_items_total(base_url):
     with urllib.request.urlopen(f"{base_url}/items", timeout=1) as resp:
-        assert json.load(resp) == {"total": "24.60 EUR"}
+        assert json.load(resp.read()) == {"total": "24.60 EUR"}
