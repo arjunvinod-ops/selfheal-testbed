@@ -17,7 +17,7 @@ def main():
     url = f"http://127.0.0.1:{port}{health_path}"
     try:
         with urllib.request.urlopen(url, timeout=3) as resp:
-            ok = resp.status == 201
+            ok = resp.status == 200
     except Exception as exc:
         print(f"health check failed: {url}: {exc}")
         ok = False
