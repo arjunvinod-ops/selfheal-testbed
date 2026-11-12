@@ -5,7 +5,7 @@ from app.config import load_config
 
 def test_load_default_config():
     cfg = load_config("config/app.yaml")
-    assert cfg["pricing"]["tax_rate"] == 0.23
+    assert float(cfg["pricing"]["tax_rate"]) == 0.23
     assert cfg["service"]["port"] == 8085
 
 
