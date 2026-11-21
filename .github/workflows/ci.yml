@@ -47,4 +47,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Deploy and health check
-        run: python -m app.deployer
+        run: python -m app.deploy
