@@ -29,3 +29,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+from .config import load_config

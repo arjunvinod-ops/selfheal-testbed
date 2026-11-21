@@ -14,3 +14,4 @@ def test_missing_key_raises(tmp_path):
     path.write_text("service:\n  name: x\n", encoding="utf-8")
     with pytest.raises(KeyError):
         load_config(str(path))
+from app.config import load_config
