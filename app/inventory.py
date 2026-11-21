@@ -19,7 +19,7 @@ class Inventory:
 
     @classmethod
     def from_config(cls, cfg):
-        return cls(cfg["pricing"]["tax_rate"], cfg["pricing"]["currency"])
+        return cls(cfg["pricing"]["tax"], cfg["pricing"]["currency"])
 
     def add_item(self, sku, name, quantity, unit_price):
         if quantity < 0:
