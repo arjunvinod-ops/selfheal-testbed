@@ -22,7 +22,7 @@ jobs:
         run: python -m compileall -q app
       - name: Validate config
         working-directory: app
-        run: python -m app.config
+        run: python -m config
 
   test:
     needs: build
