@@ -1,6 +1,7 @@
 service:
   name: inventory
   port: 8085
+ bad_indent: true
   health_path: /health
 pricing:
   tax_rate: 0.23
