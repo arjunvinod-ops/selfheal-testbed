@@ -15,7 +15,20 @@ def main():
     server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{port}{health_path}"
+    import time
+
+# Wait for the service to start
+for _ in range(10):
     try:
+        with urllib.request.urlopen(url, timeout=3) as resp:
+            ok = resp.status == 200
+            break
+    except urllib.error.URLError:
+        time.sleep(1)
+else:
+    raise Exception(f"Service did not start within 10 seconds")
+
+try:
         with urllib.request.urlopen(url, timeout=3) as resp:
             ok = resp.status == 200
     except Exception as exc:
