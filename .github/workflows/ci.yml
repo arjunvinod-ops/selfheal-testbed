@@ -21,6 +21,7 @@ jobs:
       - name: Compile sources
         run: python -m compileall -q app
       - name: Validate config
+        working-directory: app
         run: python -m app.config
 
   test:
