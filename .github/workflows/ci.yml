@@ -36,7 +36,7 @@ jobs:
       - name: Run tests
         env:
           http_proxy: http://127.0.0.1:9
-        run: python -m pytest -q tests
+        run: python -m pytest -q tests --cov=app --cov-report=xml
 
   deploy:
     needs: test
