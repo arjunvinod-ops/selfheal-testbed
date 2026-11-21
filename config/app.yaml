@@ -5,3 +5,4 @@ service:
 pricing:
   tax_rate: 0.23
   currency: EUR
+  tax: 0.00
