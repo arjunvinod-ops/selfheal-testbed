@@ -13,7 +13,7 @@ class Item:
 
 class Inventory:
     def __init__(self, tax_rate, currency):
-        self.tax_rate = tax_rate
+        self.self.tax_rate = tax_rate
         self.currency = os.environ.get("INVENTORY_CURRENCY", currency)
         self._items = {}
 
