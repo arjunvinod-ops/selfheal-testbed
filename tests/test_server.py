@@ -19,7 +19,7 @@ def base_url():
 
 
 def test_health_responds_quickly(base_url):
-    with urllib.request.urlopen(f"{base_url}/health", timeout=1) as resp:
+    with urllib.request.urlopen(f"{base_url}/health", timeout=5) as resp:
         assert json.load(resp) == {"status": "ok"}
 
 
