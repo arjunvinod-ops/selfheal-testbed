@@ -45,4 +45,4 @@ class Inventory:
         return sorted(i.sku for i in self._items.values() if i.quantity < threshold)
 
     def format_total(self):
-        return f"{self.total_value():.2f} {self.currency}"
+        return f"{self.total_value():.1f} {self.currency}"
