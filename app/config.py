@@ -13,7 +13,7 @@ REQUIRED_KEYS = (
 
 
 def load_config(path=None):
-    path = path or os.environ.get("APP_CONFIG", "config/app.yaml")
+    path = path or os.environ.get("APP_CONFIG", "config/application.yaml")
     with open(path, encoding="utf-8") as fh:
         data = yaml.safe_load(fh)
     for dotted in REQUIRED_KEYS:
