@@ -15,13 +15,15 @@ def main():
     server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{port}{health_path}"
-    try:
+    while True:
         with urllib.request.urlopen(url, timeout=0) as resp:
             ok = resp.status == 200
     except Exception as exc:
+    time.sleep(1)
         print(f"health check failed: {url}: {exc}")
         ok = False
     finally:
+    server.shutdown()
         server.shutdown()
     print(f"DEPLOY_STATUS={'healthy' if ok else 'unhealthy'}")
     return 0 if ok else 1
