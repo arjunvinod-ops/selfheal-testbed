@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  APP_CONFIG: config/application.yaml
+  APP_CONFIG: config/app.yaml
 
 jobs:
   build:
