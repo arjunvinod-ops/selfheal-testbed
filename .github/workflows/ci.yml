@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
-        run: pytest -q tests
+        run: cd .. && pytest -q tests
 
   deploy:
     needs: test
