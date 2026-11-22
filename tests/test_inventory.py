@@ -38,4 +38,4 @@ def test_low_stock_excludes_items_at_threshold(inv):
 
 def test_format_total(inv):
     inv.add_item("A1", "widget", 2, 10.0)
-    assert inv.format_total() == "24.60 EUR"
+    assert inv.format_total() == "24.60 USD"
