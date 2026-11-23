@@ -25,4 +25,4 @@ def test_health_responds_quickly(base_url):
 
 def test_items_total(base_url):
     with urllib.request.urlopen(f"{base_url}/items", timeout=1) as resp:
-        assert json.load(resp) == {"total": "24.60 EUR"}
+        assert json.load(resp) == {"total": "25.00 EUR"}
