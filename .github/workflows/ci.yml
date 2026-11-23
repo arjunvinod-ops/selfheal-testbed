@@ -47,4 +47,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Deploy and health check
+        env:
+          http_proxy: http://127.0.0.1:9
         run: python -m app.deploy
