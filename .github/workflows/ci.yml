@@ -18,6 +18,8 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Compile sources
         run: python -m compileall -q app
       - name: Validate config
@@ -33,6 +35,8 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Run tests
         run: python -m pytest -q tests
 
@@ -45,5 +49,7 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Deploy and health check
         run: python -m app.deploy
