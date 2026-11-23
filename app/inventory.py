@@ -25,7 +25,7 @@ class Inventory:
         if quantity < 0:
             raise ValueError("quantity must be non-negative")
         if sku in self._items:
-            self._items[sku].quantity += quantity
+            self._items[sku].quantity = quantity
         else:
             self._items[sku] = Item(sku, name, quantity, unit_price)
 
