@@ -11,7 +11,7 @@ from app.server import create_server
 def main():
     cfg = load_config()
     port = cfg["service"]["port"]
-    health_path = cfg["service"]["health_path"]
+    health_path = "/healthz"
     server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{port + 1}{health_path}"
