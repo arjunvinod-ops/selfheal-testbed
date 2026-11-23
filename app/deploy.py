@@ -15,6 +15,7 @@ def main():
     server = create_server(Inventory.from_config(cfg), "127.0.0.1", port)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     url = f"http://127.0.0.1:{port}{health_path}"
+server.join(5)  # Wait for the server to start
     try:
         with urllib.request.urlopen(url, timeout=3) as resp:
             ok = resp.status == 200
